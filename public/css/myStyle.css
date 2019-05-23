@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+.parallax-container{
+  height:600px !important;
+}
+
+body{
+	background:white;
+	font-family: "Montserrat", sans-serif;
+  color:black;
+  height:100%;
+}
+
+.logo{
+	width:70px;
+	padding:10px;
+}
+
+#stikalo{
+  width:100%;
+  text-align: right;
+}
+
+#my-button{
+  margin:20px;
+  position: fixed;
+  right:0px;
+}
+
+#neki{
+  line-height: 30px;
+}
+
+#my-file {
+  visibility: hidden;
+}
+
+#login{
+  width:100%;
+}
+
+.karta{
+  height:300px;
+
+}
+#modal1 {
+  height: 80% !important;
+  max-height: 100%;
+  width:50%;
+}
+
+.ikone{
+	width:150px;
+}
+
+
+
