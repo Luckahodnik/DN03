@@ -16,98 +16,10 @@
 	<title>Mobilni e-Arhiv</title>
 </head>
 <body>
-	<nav class="nav-wrapper green">
-			<a href="#" data-target="slide-out" class="sidenav-trigger right large show-on-medium-and-down"><i class="material-icons">menu</i></a>
+		@component('components.navbar')
 
-		<div id="menu" >
-		<a href="{{ route('homeView') }}">
-		<img class="logo" alt="" src="slike/logo.svg"/></a>
-			<ul class="right hide-on-med-and-down">
-				<li>
-					<a id ="menu_h" href="{{ route('homeView') }}">
-						Domov
-					</a>
-				</li>
-				<li>
-					<a id ="menu_r" href="{{ route('receiptsView') }}">
-						E-računi
-					</a>
-				</li>
-				<li>
-  					<a class="btn-floating pulse black modal-trigger" href="#modal1">
-							<i class="material-icons right large">account_circle</i>
-					</a>
-				</li>
-				</ul>
-		</div>
-	</nav>
+		@endcomponent
 
-	<ul id="slide-out" class="sidenav">
-		<li>
-			<div class="user-view">
-				<div class="background green">
-					<img src="slike/mainphoto.jpg"/>
-					<img class="logo" alt="" src="slike/logo.svg"/>
-				</div>
-				<a id ="menu_c" href="resources.html" id="login" class="btn-floating black large">
-					<i class="material-icons right large">account_circle</i>
-				</a>
-			</div>
-		</li>
-			<li>
-				<a id ="menu_h" href="{{ route('homeView') }}">
-					Domov
-				</a>
-			</li>
-			<li>
-				<a id ="menu_r" href="{{ route('receiptsView') }}">
-					E-računi
-				</a>
-		</ul>
-
-  <div id="modal1" class="modal modal-fixed-footer">
-    <div class="modal-content">
-		<div class="container" id="login">
-				<h5 class="black-text center-align">Vpiši se v svoj račun</h5>
-				<div class="section"></div>
-
-				<div class="container center-align">
-					<div class="z-depth-1 grey lighten-4 row" style="display: inline-block; padding: 32px 48px 0px 48px; border: 1px solid #EEE;">
-
-					<form class="col s12" method="post">
-						<div class='row'>
-						<div class='col s12'>
-						</div>
-						</div>
-
-						<div class='row'>
-						<div class='input-field col s12'>
-							<input class='validate' type='email' name='email' id='email' />
-							<label for='email'>Vnesi svoj email</label>
-						</div>
-
-						<div class='input-field col s12'>
-							<input class='validate' type='password' name='password' id='password' />
-							<label for='password'>Vnesi svoje geslo</label>
-						</div>
-						<label style='float: right;'>
-											<a class='red-text' href='#!'><b>Pozabljeno geslo</b></a>
-										</label>
-						</div>
-
-						<br />
-						<div class='row'>
-							<button type='submit' name='btn_login' class='col s12 btn btn-large waves-effect black'>Vpiši se</button>
-						</div>
-					</form>
-
-					</div>
-				</div>
-				<div class='container center-align'>
-						<a class='black-text' href='#!'><b>Ustvari račun</b></a>
-				</div>
-		</div>
-	</div>
 
   </div>
   <div class="fixed-action-btn click-to-toggle">

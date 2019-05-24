@@ -12,6 +12,9 @@
 */
 
 Route::redirect('/', '/home');
-Route::view('/home', 'home')->name('homeView');
-Route::view('/receipts', 'receipts')->name('receiptsView');
+//Route::view('/home', 'home')->name('homeView');
+//Route::view('/receipts', 'receipts')->name('receiptsView');
 
+Auth::routes(['verify' => true]);
+Route::get('/home', 'HomeController@index')->name('homeView');
+Route::get('/receipts', 'ReceiptsController@index')->name('receiptsView');
