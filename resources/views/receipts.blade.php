@@ -115,8 +115,13 @@
       <i class="large material-icons">mode_edit</i>
     </a>
     <ul>
-      <li><a class="btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a></li>
-      <li><a class="btn-floating blue"><i class="material-icons">attach_file</i></a></li>
+					<li class="file-field input-field">
+									<a class="btn-floating blue">
+											<i class="material-icons">attach_file</i>
+											<input type="file" multiple>
+									</a>
+					</li>
+					<li><a class="btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a></li>
     </ul>
   </div>
 

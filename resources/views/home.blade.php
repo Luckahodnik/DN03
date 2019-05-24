@@ -122,7 +122,7 @@
 					<div class="col s12 m4 l4">
 							<div class="card-panel white z-depth-3 karta">
 									<img class="ikone" src="slike/login.png"/>
-									<h5>2. Vpiši se</h5>
+									<h5>2. Vpiši se v svoj uporabniški račun</h5>
 							</div>
 					</div>
 					<div class="col s12 m4 l4 ">
