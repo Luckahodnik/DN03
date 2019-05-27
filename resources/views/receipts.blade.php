@@ -30,12 +30,47 @@
 					<li class="file-field input-field">
 									<a class="btn-floating blue">
 											<i class="material-icons">attach_file</i>
-											<input type="file" multiple>
+											<input id="file_input" type="file" multiple>
 									</a>
 					</li>
-					<li><a class="btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a></li>
-    </ul>
-  </div>
+					<li><a class="btn-floating yellow darken-1 modal-trigger" href="#modal1"><i class="material-icons">format_quote</i></a></li>
+				</ul>
+		</div>
+
+		<div id="modal1" class="modal">
+    <div class="modal-content">
+      <div class="row">
+								<form class="col s8">
+										<div class="row">
+												<div class="input-field col s6">
+														<input type="text">
+														<label>Ime trgovine</label>
+												</div>
+												<div class="input-field col s6">
+														<input type="text">
+														<label for="last_name">Znesek</label>
+												</div>
+										<div class="input-field col s12">
+												<input type="text" class="datepicker">
+												<label for="last_name">Datum izdatka</label>
+										</div>
+										<div class="input-field col s12">
+												<select>
+														<option value="" disabled selected>Vrsta izdatka</option>
+														<option value="1">Hrana</option>
+														<option value="2">Nujne potrbščine</option>
+														<option value="3">Ostalo</option>
+												</select>
+												<label>Materialize Select</label>
+										</div>
+									</div>
+								</form>
+						</div>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Dodaj</a>
+    </div>
+		</div>
 
 	<div class="col s12 m8 offset-m2 l6 offset-l3">
 		<div class="card-panel grey lighten-5 z-depth-1 hide-on-med-and-up">
@@ -66,11 +101,8 @@
 								</label>
 							</div>
 							<div class="row">
-									<div class="col s12 m12 l9 align-center">
+									<div class="col s12 align-center">
 										<canvas id="myChart" width="1200" height="400"></canvas>
-									</div>
-									<div class="col s5 m4 l3 hide-on-med-and-down">
-										<canvas id="myChart1" width="400" height="400"></canvas>
 									</div>
 							</div>
 						</div>
@@ -89,35 +121,12 @@
 							<td>Mercator</td>
 							<td>12.78€</td>
 							<td>
-								<button class="">PDF</button>
+								<button class="waves-effect waves-light btn-large green">PDF</button>
 							</td>
 						</tr>
-						<tr>
-							<td>Mercator</td>
-							<td>12.78€</td>
-							<td>
-								<button class="">PDF</button>
-							</td>
-						</tr>
-						<tr>
-								<td>Mercator</td>
-								<td>12.78€</td>
-								<td>
-									<button class="">PDF</button>
-								</td>
-							</tr>
-							<tr>
-									<td>Mercator</td>
-									<td>12.78€</td>
-									<td>
-										<button class="">PDF</button>
-									</td>
-								</tr>
 					</tbody>
 			</table>
 	</div>
-
-
 
 </body>
 </html>

@@ -1,7 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
-.parallax-container{
-  height:600px !important;
-}
+
 
 body{
 	background:white;
@@ -20,30 +18,28 @@ body{
   text-align: right;
 }
 
-#my-button{
-  margin:20px;
-  position: fixed;
-  right:0px;
-}
-
 #neki{
   line-height: 30px;
 }
 
-#login{
-  width:100%;
-}
-
-#modal1 {
-  height: 80% !important;
-  max-height: 100%;
-  width:50%;
-}
-
 .ikone{
 	width:180px;
-
 }
 
+.naslov{
+	width:500px;
+}
 
+.dropdown-content{
+	top:60px !important;
+	width:200px !important;
+}
 
+#karte{
+	margin-top:100px;
+	margin-bottom: 100px;
+}
+
+#modal1{
+	height:70% !important;
+}

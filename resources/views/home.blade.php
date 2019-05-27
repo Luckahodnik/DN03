@@ -14,37 +14,75 @@
 		<script type="text/javascript" src="js/materialize.min.js"></script>
 	</head>
 	<body>
-		@component('components.navbar')
+			@component('components.navbar')
 
-		@endcomponent
-
-		<div class="parallax-container hide-on-med-and-down">
+			@endcomponent
+<div>
+		<div class="parallax-container hide-on-small">
 				<div class="parallax"><img src="slike/nature.jpg"></div>
+				<div class="container center"><img class="naslov" src="slike/naslov.svg"/></div>
+
 		</div>
-		<div class="container">
+</div>
+
+		<div id="karte" class="container">
 			<div class="row center-align">
 					<div class="col s12 m4 l4">
 						<div class="card-panel white z-depth-2 karta">
-								<img class="ikone" src="slike/register.png"/>
-								<h5>1. Registriraj svoj uporabniški račun</h5>
+
+								<a href="{{url('/register')}}">
+									<img class="ikone" src="slike/register.svg"/>
+									<h5>1. Registriraj svoj uporabniški račun</h5>
+								</a>
 						</div>
 					</div>
 					<div class="col s12 m4 l4">
-							<div class="card-panel white z-depth-3 karta">
-									<img class="ikone" src="slike/login.png"/>
-									<h5>2. Vpiši se v svoj uporabniški račun</h5>
+							<div class="card-panel white z-depth-2 karta">
+									<a href="{{url('/login')}}">
+										<img class="ikone" src="slike/login.svg"/>
+										<h5>2. Vpiši se v svoj uporabniški račun</h5>
+									</a>
 							</div>
 					</div>
 					<div class="col s12 m4 l4 ">
 							<div class="card-panel white z-depth-2 karta">
-									<img class="ikone" src="slike/online.png"/>
-									<h5>3. Dodaj svoje elektronske račune</h5>
+									<a href="{{ route('receiptsView') }}">
+										<img class="ikone" src="slike/online.svg"/>
+										<h5>3. Dodaj svoje elektronske račune</h5>
+								</a>
 							</div>
 					</div>
 			</div>
 		</div>
 
-
+				<div class="parallax-container hide-on-small">
+						<div class="parallax"><img src="slike/mainphoto.jpg"></div>
+			</div>
+			<div id="karte" class="container">
+			<div class="row">
+					<div class="col s12 m4">
+							<div class="card">
+									<div class="card-image">
+											<img src="slike/rose.jpg">
+											<span class="card-title black-text">Cilj aplikacije</span>
+									</div>
+									<div class="card-content">
+											<h5>Cilj naše aplikacije je ekološka alternativa prejemanja papirnatih računov.</h5>
+									<div class="card-action">
+											<a href="http://www.roseslovenia.eu/o-ukrepu.html">Ukrep Rose</a>
+									</div>
+							</div>
+					</div>
+			</div>
+			<div class="col s12 m8">
+					<div class="card-panel green">
+							<h5 class="white-text">Papirnati računi v trgovinah se pogosto zavržejo, izgubijo ali pa skozi čas izgubijo.
+								<br>S to aplikacijo bomo omogočili strankam dolgotrajno hranjenje elektronskih računov in nadzor nad njimi.
+								Stranka si lahko na spletni strani doda svoje elektronske račune, jih nadzoruje in ima pregled nad svojimi izdatki z grafično upodobitvijo.
+							</h5>
+					</div>
+			</div>
+		</div>
 
 	</body>
 </html>

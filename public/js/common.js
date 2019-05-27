@@ -5,7 +5,7 @@ $(document).ready(function(){
 		$('.modal-trigger').modal({
 		dismissible: false
   });
-
+		$(".dropdown-trigger").dropdown();
 });
 
 document.addEventListener('DOMContentLoaded', function() {

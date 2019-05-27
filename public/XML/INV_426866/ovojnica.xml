@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<sender>
+		<name>VRTEC JELKA</name>
+		<country>SI</country>
+		<address>GLAVARJEVA ULICA 018</address>
+		<address>1000 LJUBLJANA</address>
+		<sender_identifier>SI39675335</sender_identifier>
+		<sender_eddress>
+			<sender_agent>UJPLSI20ICL</sender_agent>
+			<sender_mailbox>SI56012616030636956</sender_mailbox>
+		</sender_eddress>
+	</sender>
+	<receiver>
+		<name>TINA ŠINKOVEC</name>
+		<address>GLINŠKOVA PLOŠČAD 23</address>
+		<address>1000 LJUBLJANA</address>
+		<receiver_identifier>10791779</receiver_identifier>
+		<receiver_eddress>
+			<receiver_agent>UJPLSI20ICL</receiver_agent>
+			<receiver_mailbox>SI56011111111111602</receiver_mailbox>
+		</receiver_eddress>
+	</receiver>
+	<doc_data>
+		<doc_type>0002</doc_type>
+		<doc_type_ver>01</doc_type_ver>
+		<doc_id>NA</doc_id>
+		<external_doc_id>880</external_doc_id>
+		<timestamp>2019-02-25T00:00:00</timestamp>
+	</doc_data>
+	<payment_data>
+		<payment_method>0</payment_method>
+		<creditor>
+			<name>VRTEC JELKA</name>
+			<country>SI</country>
+			<address>GLAVARJEVA ULICA 018</address>
+			<address>1000 LJUBLJANA</address>
+			<creditor_agent>BSLJSI2XXXX</creditor_agent>
+			<creditor_account>SI56012616030636956</creditor_account>
+		</creditor>
+		<debtor>
+			<name>TINA ŠINKOVEC</name>
+			<country>SI</country>
+			<address>GLINŠKOVA PLOŠČAD 23</address>
+			<address>1000 LJUBLJANA</address>
+			<debtor_agent>BSLJSI2XXXX</debtor_agent>
+			<debtor_account>SI56011111111111602</debtor_account>
+		</debtor>
+		<requested_execution_date>2019-02-28</requested_execution_date>
+		<amount>24.40</amount>
+		<currency>EUR</currency>
+		<remittance_information>
+			<creditor_structured_reference>SI99</creditor_structured_reference>
+			<additional_remittance_information>Račun št. 880</additional_remittance_information>
+		</remittance_information>
+		<purpose>OTHR</purpose>
+	</payment_data>
+	<attachments>
+		<hash>0000000000000000000000000000000000000000</hash>
+		<size>0</size>
+		<count>2</count>
+		<attachment>
+			<filename>eRacun.xml</filename>
+			<size>8264</size>
+			<type>XML</type>
+			<description>E-Slog</description>
+		</attachment>
+		<attachment>
+			<filename>eRacun.PDF</filename>
+			<size>535662</size>
+			<type>PDF</type>
+		</attachment>
+	</attachments>
+</envelope>
