@@ -1,6 +1,9 @@
 
 $(document).ready(function(){
 	$('.modal').modal();
+	$('.modal-trigger').modal({
+		dismissible: false
+  });
 	$('.datepicker').datepicker();
 	$('select').formSelect();
 	var elems = document.querySelectorAll('.fixed-action-btn');

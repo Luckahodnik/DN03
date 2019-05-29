@@ -8,20 +8,17 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
-	<script src="js/jquery-3.4.1.min.js"></script>
-	<script src="js/common.js"></script>
-	<script src="js/receipts.js"></script>
-	<script type="text/javascript" src="js/materialize.min.js"></script>
-	<script src="js/chart.js/dist/Chart.js"></script>
+	<script src="{{ asset('js/jquery-3.4.1.min.js') }}"></script>
+	<script src="{{ asset('js/common.js') }}"></script>
+	<script src="{{ asset('js/receipts.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('js/materialize.min.js') }}"></script>
+	<script src="{{ asset('js/chart.js/dist/Chart.js') }}"></script>
 	<title>Mobilni e-Arhiv</title>
 </head>
 <body>
 		@component('components.navbar')
-
 		@endcomponent
 
-
-  </div>
   <div class="fixed-action-btn click-to-toggle">
     <a class="btn-floating btn-large red">
       <i class="large material-icons">mode_edit</i>
@@ -33,7 +30,11 @@
 											<input id="file_input" type="file" multiple>
 									</a>
 					</li>
-					<li><a class="btn-floating yellow darken-1 modal-trigger" href="#modal1"><i class="material-icons">format_quote</i></a></li>
+					<li>
+						<a class="btn-floating yellow darken-1 modal-trigger" href="#modal1">
+							<i class="material-icons">format_quote</i>
+						</a>
+					</li>
 				</ul>
 		</div>
 
@@ -76,7 +77,9 @@
 		<div class="card-panel grey lighten-5 z-depth-1 hide-on-med-and-up">
 			<div class="row valign-wrapper">
 				<div class="col s2">
-						<a id ="menu_c" href="resources.html" id="login" class="btn-floating black large"><i class="material-icons right large">account_circle</i></a>
+						<a id ="menu_c" href="resources.html" id="login" class="btn-floating black large">
+							<i class="material-icons right large">account_circle</i>
+						</a>
 				</div>
 				<div class="col s10">
 					<span class="black-text">

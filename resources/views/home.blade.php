@@ -2,28 +2,26 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 	<head>
 		<title>Mobilni e-Arhiv</title>
-		<link rel="stylesheet" type="text/css" href="css/mystyle.css">
+		<link rel="stylesheet" type="text/css" href="{{ asset('css/mystyle.css') }}">
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-		<link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection"/>
+		<link type="text/css" rel="stylesheet" href="{{ asset('css/materialize.min.css') }}" media="screen,projection"/>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
-		<script type="text/javascript" src="js/common.js"></script>
-		<script type="text/javascript" src="js/materialize.min.js"></script>
+		<script type="text/javascript" src="{{ asset('js/jquery-3.4.1.min.js') }}"></script>
+		<script type="text/javascript" src="{{ asset('js/materialize.min.js') }}"></script>
+		<script type="text/javascript" src="{{ asset('js/home.js') }}"></script>
 	</head>
 	<body>
-			@component('components.navbar')
-
-			@endcomponent
-<div>
-		<div class="parallax-container hide-on-small">
-				<div class="parallax"><img src="slike/nature.jpg"></div>
-				<div class="container center"><img class="naslov" src="slike/naslov.svg"/></div>
-
+		@component('components.navbar')
+		@endcomponent
+		<div>
+				<div class="parallax-container hide-on-small">
+						<div class="parallax"><img src="{{ asset('slike/nature.jpg') }}"></div>
+						<div class="container center"><img class="naslov" src="{{ asset('slike/naslov.svg') }}"/></div>
+				</div>
 		</div>
-</div>
 
 		<div id="karte" class="container">
 			<div class="row center-align">
@@ -31,7 +29,7 @@
 						<div class="card-panel white z-depth-2 karta">
 
 								<a href="{{url('/register')}}">
-									<img class="ikone" src="slike/register.svg"/>
+									<img class="ikone" src="{{ asset('slike/register.svg') }}"/>
 									<h5>1. Registriraj svoj uporabniški račun</h5>
 								</a>
 						</div>
@@ -39,7 +37,7 @@
 					<div class="col s12 m4 l4">
 							<div class="card-panel white z-depth-2 karta">
 									<a href="{{url('/login')}}">
-										<img class="ikone" src="slike/login.svg"/>
+										<img class="ikone" src="{{ asset('slike/login.svg') }}"/>
 										<h5>2. Vpiši se v svoj uporabniški račun</h5>
 									</a>
 							</div>
@@ -47,7 +45,7 @@
 					<div class="col s12 m4 l4 ">
 							<div class="card-panel white z-depth-2 karta">
 									<a href="{{ route('receiptsView') }}">
-										<img class="ikone" src="slike/online.svg"/>
+										<img class="ikone" src="{{ asset('slike/online.svg') }}"/>
 										<h5>3. Dodaj svoje elektronske račune</h5>
 								</a>
 							</div>
@@ -56,15 +54,14 @@
 		</div>
 
 				<div class="parallax-container hide-on-small">
-						<div class="parallax"><img src="slike/mainphoto.jpg"></div>
+						<div class="parallax"><img src="{{ asset('slike/mainphoto.jpg') }}"></div>
 			</div>
 			<div id="karte" class="container">
 			<div class="row">
 					<div class="col s12 m4">
 							<div class="card">
 									<div class="card-image">
-											<img src="slike/rose.jpg">
-											<span class="card-title black-text">Cilj aplikacije</span>
+											<img src="{{ asset('slike/rose.jpg') }}">
 									</div>
 									<div class="card-content">
 											<h5>Cilj naše aplikacije je ekološka alternativa prejemanja papirnatih računov.</h5>
