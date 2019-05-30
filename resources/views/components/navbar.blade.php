@@ -1,19 +1,35 @@
-<script type="text/javascript" src="{{ asset('js/jquery-3.4.1.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('js/materialize.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('js/common.js') }}"></script>
 
-<ul id="dropdown1" class="dropdown-content">
+<script type="text/javascript" src="{{ asset('js/common.js') }}"></script>
+<ul id="vrstica_dd" class="dropdown-content">
   <li>
-				<a class="green-text" href="{{ route('login') }}">{{ __('Vpiši se') }}</a>
+				<a class="green-text"
+				@if (Auth::check())
+				onclick="M.toast({html: 'Ste že vpisani!'})"
+				@else
+				href="{{ route('login') }}"
+				@endif>{{ __('Vpiši se') }}</a>
 		</li>
 		<li>
-				<a class="green-text" href="{{ route('register') }}">{{ __('Registriraj se') }}</a>
+				<a class="green-text"
+				@if (Auth::check())
+				onclick="M.toast({html: 'Ste že vpisani!'})"
+				@else
+				href="{{ route('register') }}"
+				@endif>{{ __('Registriraj se') }}</a>
 		</li>
-  <li><a class="green-text" href="#!">Izpiši se</a></li>
+		@if (Auth::check())
+  <li>
+				<label class="green-text" for="logout-field">{{ __('Izpiši se') }}</label>
+			<form class="hide" action="{{ route('logout') }}" method="post">
+					{{ csrf_field() }}
+				<input id="logout-field" class="green-text" type="submit"/>
+			</form>
+		</li>
+		@endif
 </ul>
 
 
-<nav class="nav-wrapper green">
+<nav class="nav-wrapper green" id="glavna_vrstica">
 		<a href="#" data-target="slide-out" class="sidenav-trigger right large show-on-medium-and-down"><i class="material-icons">menu</i></a>
 	<div id="menu" >
 	<a href="{{ route('homeView') }}">
@@ -30,8 +46,8 @@
 				</a>
 			</li>
 			<li>
-						<a class="btn-floating pulse black dropdown-trigger" href="#!" data-target="dropdown1">
-							<i class="material-icons right large">account_circle</i>
+						<a class="btn-floating pulse black dropdown-trigger" href="#!" data-target="vrstica_dd">
+							<i class="material-icons right large white-text">person</i>
 						</a>
 			</li>
 			</ul>

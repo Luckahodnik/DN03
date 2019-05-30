@@ -14,10 +14,10 @@ $(document).ready(function(){
   new Chart(document.getElementById("myChart"), {
     type: 'line',
     data: {
-        labels: ['Ponedeljek', 'Torek', 'Sreda', 'Četrtek', 'Petek', 'Sobota', 'Nedelja' ],
+        labels: ['Januar', 'Februar', 'Marec', 'April', 'Maj', 'Junij', 'Julij', 'Avgust', 'September','Oktober','November','December' ],
         datasets: [{
             label: 'Pregled izdatkov enega tedna €',
-            data: [120, 19, 30, 5, 2, 3, 160,],
+            data: [120, 19, 30, 5, 2, 3, 60,0,0,0,0,0],
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',

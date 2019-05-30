@@ -1,15 +1,15 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
 
-
 body{
 	background:white;
 	font-family: "Montserrat", sans-serif;
-  color:black;
-  height:100%;
+	color:black;
+	height:100%;
+	background-color:#F0F0F0;
 }
 
 .logo{
-	width:70px;
+	width:60px;
 	padding:10px;
 }
 
@@ -22,17 +22,30 @@ body{
   line-height: 30px;
 }
 
-.ikone{
-	width:180px;
-}
-
 .naslov{
 	width:500px;
 }
 
-.dropdown-content{
-	top:60px !important;
+#vrstica_dd{
+	top:50px !important;
 	width:200px !important;
+	left:10px;
+}
+.ikone{
+	width:80%;
+}
+
+#ikone_naslov{
+	font-size: 1.2em;
+}
+
+#karta{
+	border-radius: 5px;
+
+}
+
+#parallax_slika{
+	height:600px !important;
 }
 
 #karte{
@@ -40,6 +53,92 @@ body{
 	margin-bottom: 100px;
 }
 
+#vrstica_opis{
+	color:darkgrey;
+	padding:5px;
+}
+
 #modal1{
-	height:70% !important;
+	border-radius: 10px;
+	width:50% !important;
+}
+
+#vsebina_domov{
+	font-size: 1em;
+	text-align: justify;
+}
+
+.karta_slika{
+	padding:0px !important;
+}
+
+#vrstica{
+	border-radius: 10px 10px 0px 0px;
+	padding:8px;
+	background-color:#f4f4f4;
+	border-bottom: 1px solid 		#C0C0C0;
+}
+
+#menu li>a{
+	font-size:1.2em !important;
+}
+
+#vrstica_dropdown{
+	width:200px!important;
+}
+
+#opis_dd{
+	padding-left:20px;
+	font-size:1.2em;
+	color:grey;
+}
+
+#graf{
+	padding:0px;
+	border-radius: 10px;
+}
+
+#vsi_izdatki{
+	position: relative;
+	padding-right: 10px;
+}
+
+#vsi_izdatki>div{
+	position: relative;
+	border-radius: 10px;
+	border-left: 6px solid #8CD790;
+	/*margin-right:10px;*/
+}
+
+#st_racunov{
+	position: relative;
+	padding-right: 10px;
+}
+
+#st_racunov>div{
+	position: relative;
+	border-radius: 10px;
+	border-left: 6px solid #1F5673;
+	/*margin-right:10px;*/
+}
+
+#poraba{
+	position: relative;
+	padding-right: 10px;
+}
+#poraba>div{
+	position: relative;
+	border-radius: 10px;
+	border-left: 6px solid rgb(22, 141, 141);
+}
+
+#celota{
+	padding:50px;
+}
+
+.dropdown-content li>label{
+	font-size: 16px;
+	display: block;
+	line-height: 22px;
+	padding: 14px 16px;
 }

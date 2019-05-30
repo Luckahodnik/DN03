@@ -16,70 +16,107 @@
 	<body>
 		@component('components.navbar')
 		@endcomponent
+
 		<div>
-				<div class="parallax-container hide-on-small">
-						<div class="parallax"><img src="{{ asset('slike/nature.jpg') }}"></div>
-						<div class="container center"><img class="naslov" src="{{ asset('slike/naslov.svg') }}"/></div>
+				<div class="parallax-container hide-on-small-only" >
+						<div class="parallax">
+							<img src="{{ asset('slike/mainphoto.jpg') }}">
+						</div>
 				</div>
 		</div>
 
 		<div id="karte" class="container">
 			<div class="row center-align">
 					<div class="col s12 m4 l4">
-						<div class="card-panel white z-depth-2 karta">
-
+						<div class="card-panel white z-depth-3" id="karta">
 								<a href="{{url('/register')}}">
 									<img class="ikone" src="{{ asset('slike/register.svg') }}"/>
-									<h5>1. Registriraj svoj uporabniški račun</h5>
+									<p id="ikone_naslov">1. Registriraj svoj uporabniški račun</p>
 								</a>
 						</div>
 					</div>
-					<div class="col s12 m4 l4">
-							<div class="card-panel white z-depth-2 karta">
-									<a href="{{url('/login')}}">
+					<div class="col s12 m4 l4" >
+							<div class="card-panel white z-depth-3" id="karta">
+									<a
+									@if (Auth::check())
+									onclick="M.toast({html: 'Ste že vpisani!'})"
+									@else
+									href="{{url('/login')}}"
+									@endif>
 										<img class="ikone" src="{{ asset('slike/login.svg') }}"/>
-										<h5>2. Vpiši se v svoj uporabniški račun</h5>
+										<p id="ikone_naslov">2. Vpiši se v svoj uporabniški račun</p>
 									</a>
 							</div>
 					</div>
 					<div class="col s12 m4 l4 ">
-							<div class="card-panel white z-depth-2 karta">
+							<div class="card-panel white z-depth-3" id="karta">
 									<a href="{{ route('receiptsView') }}">
 										<img class="ikone" src="{{ asset('slike/online.svg') }}"/>
-										<h5>3. Dodaj svoje elektronske račune</h5>
+										<p id="ikone_naslov">3. Dodaj svoje elektronske račune</p>
 								</a>
 							</div>
 					</div>
 			</div>
 		</div>
 
-				<div class="parallax-container hide-on-small">
-						<div class="parallax"><img src="{{ asset('slike/mainphoto.jpg') }}"></div>
+				<div class="parallax-container hide-on-small-only"  id="parallax_slika">
+						<div class="parallax">
+							<img src="{{ asset('slike/nature.jpg') }}">
+						</div>
+						<div class="container center"><img class="naslov" src="{{ asset('slike/naslov.svg') }}"/></div>
 			</div>
-			<div id="karte" class="container">
-			<div class="row">
-					<div class="col s12 m4">
-							<div class="card">
-									<div class="card-image">
-											<img src="{{ asset('slike/rose.jpg') }}">
-									</div>
-									<div class="card-content">
-											<h5>Cilj naše aplikacije je ekološka alternativa prejemanja papirnatih računov.</h5>
-									<div class="card-action">
-											<a href="http://www.roseslovenia.eu/o-ukrepu.html">Ukrep Rose</a>
-									</div>
-							</div>
-					</div>
-			</div>
-			<div class="col s12 m8">
-					<div class="card-panel green">
-							<h5 class="white-text">Papirnati računi v trgovinah se pogosto zavržejo, izgubijo ali pa skozi čas izgubijo.
-								<br>S to aplikacijo bomo omogočili strankam dolgotrajno hranjenje elektronskih računov in nadzor nad njimi.
-								Stranka si lahko na spletni strani doda svoje elektronske račune, jih nadzoruje in ima pregled nad svojimi izdatki z grafično upodobitvijo.
-							</h5>
-					</div>
-			</div>
+			<div>
+
+
+	<div class="green" id="celota">
+		<div class="container">
+		<div class="row">
+		<form class="col s12">
+				<div class="row card-panel white z-depth-4 center-align" id="karta">
+					<p><b>Want to help out? Message us!</p>
+						<div class="input-field col s12">
+								<i class="material-icons prefix">email</i>
+								<input id="email" type="email" class="validate">
+								<label for="email">Email</label>
+								<span class="helper-text" data-error="wrong" data-success="right"></span>
+						</div>
+						<div class="input-field col s12">
+								<i class="material-icons prefix">mode_edit</i>
+								<textarea id="icon_prefix2" class="materialize-textarea"></textarea>
+								<label for="icon_prefix2">Message</label>
+						</div>
+						<button class="btn waves-effect waves-light right" type="submit" name="action">Pošlji
+								<i class="material-icons right">send</i>
+						</button>
+				</div>
+		</form>
+	</div>
+	</div>
+</div>
+
+<div class="container" id="karte">
+		<div class="row">
+	<div class="card col s4  karta_slika">
+		<div class="card-image waves-effect waves-block waves-light">
+				<img class="activator" src="slike/karta.jpg">
 		</div>
+		<div class="card-content">
+				<span class="card-title activator grey-text text-darken-4">Cilj aplikacije<i class="material-icons right">more_vert</i></span>
+				<p><a href="http://www.roseslovenia.eu/o-ukrepu.html">Rose ukrep</a></p>
+		</div>
+		<div class="card-reveal">
+				<span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></span>
+				<div class="col s12 m12">
+								<p id="vsebina_domov">Papirnati računi v trgovinah se pogosto zavržejo, izgubijo ali pa skozi čas izgubijo.
+									<br>S to aplikacijo bomo omogočili strankam dolgotrajno hranjenje elektronskih računov in nadzor nad njimi.
+									Stranka si lahko na spletni strani doda svoje elektronske račune, jih nadzoruje in ima pregled nad svojimi izdatki z grafično upodobitvijo.
+								</p>
+				</div>
+		</div>
+	</div>
+</div>
+</div>
+</div>
 
 	</body>
 </html>
