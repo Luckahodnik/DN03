@@ -107,7 +107,7 @@
 		<div class="card-reveal">
 				<span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></span>
 				<div class="col s12 m12">
-								<p id="vsebina_domov">Papirnati računi v trgovinah se pogosto zavržejo, izgubijo ali pa skozi čas izgubijo.
+								<p id="vsebina_domov">Papirnati računi v trgovinah se pogosto zavržejo, izgubijo ali pa skozi čas zbledijo.
 									<br>S to aplikacijo bomo omogočili strankam dolgotrajno hranjenje elektronskih računov in nadzor nad njimi.
 									Stranka si lahko na spletni strani doda svoje elektronske račune, jih nadzoruje in ima pregled nad svojimi izdatki z grafično upodobitvijo.
 								</p>

@@ -24,10 +24,10 @@
       <i class="large material-icons">mode_edit</i>
     </a>
     <ul>
-					<li class="file-field input-field">
-									<a class="btn-floating blue">
-											<i class="material-icons">attach_file</i>
-											<input id="file_input" type="file" multiple>
+					<li>
+									<a class="btn-floating blue" id="modal_ikona">
+											<label for="file_input"><i   class="material-icons">attach_file</i></label>
+											<input style="display: none" id="file_input" accept="text/xml" type="file" multiple/>
 									</a>
 					</li>
 					<li>
@@ -47,23 +47,15 @@
 								<form class="col s12">
 										<div class="row">
 												<div class="input-field col s7">
-														<input type="text">
+														<input id="ime_trg" type="text">
 														<label>Ime trgovine</label>
 												</div>
-												<div class="input-field col s3">
-														<select>
-																<option value="" disabled selected>Vrsta izdatka</option>
-																<option value="1">Hrana</option>
-																<option value="2">Nujne potrebščine</option>
-																<option value="3">Ostalo</option>
-														</select>
-												</div>
 												<div class="input-field col s7">
-														<input type="text">
+														<input id="znesek" type="text">
 														<label for="last_name">Znesek(€)</label>
 												</div>
 										<div class="input-field col s6">
-												<input type="text" class="datepicker">
+												<input id="datum" type="text" class="datepicker">
 												<label for="last_name">Datum izdatka</label>
 										</div>
 									</div>
@@ -72,18 +64,18 @@
 				</div>
 				<hr class="grey">
     <div class="modal-footer">
-      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Dodaj</a>
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat" id="dodaj">Dodaj</a>
     </div>
 		</div>
 
 
-<div class="container">
+<div class="container" id="podatki">
 	<div class="row">
 		<div id="vsi_izdatki" class="col s12 m6 l4">
 			<div class="move-up white card-panel white z-depth-2" >
 				<div id="opis_izdatki">
 					<p class="green-text"><b>LETNI IZDATKI</p>
-					<h5><b>555€</h5>
+					<h5 id="sum_znesek">0</h5>
 				</div>
 				<div style="position: absolute; right: 10px; top: 10px">
 					<i class="material-icons grey-text medium right">euro_symbol</i>
@@ -93,8 +85,8 @@
 		<div id="st_racunov" class="col s12 m6 l4">
 			<div class="move-up white card-panel white z-depth-2" >
 					<div id="opis_izdatki">
-						<p class="blue-text"><b>ŠTEVILO RAČUNOV</p>
-						<h5><b>12</h5>
+						<p class="green-text"><b>ŠTEVILO RAČUNOV</p>
+						<h5 id="st_rac"><b>0</h5>
 					</div>
 					<div style="position: absolute; right: 10px; top: 10px">
 						<i class="material-icons grey-text medium right">functions</i>
@@ -104,14 +96,11 @@
 		<div id="poraba" class="col s12 m6 l4">
 			<div class="move-up white card-panel white z-depth-2" >
 					<div id="opis_izdatki">
-						<p class="teal-text"><b>PORABLJENO</p>
-							<h5><b>70%</h5>
-							<div class="progress">
-									<div class="determinate" style="width: 70%"></div>
-							</div>
+						<p class="green-text"><b>MAKS VREDNOST RAČUNA</p>
+							<h5 id="maks_sum"><b>0</h5>
 					</div>
 					<div style="position: absolute; right: 10px; top: 10px">
-							<i class="material-icons grey-text medium right">data_usage</i>
+							<i class="material-icons grey-text medium right">trending_up</i>
 						</div>
 			</div>
 		</div>
@@ -122,14 +111,17 @@
 			<p id="opis_dd"><b>Vrsta pregleda</p>
 			<li class="divider" tabindex="-1"></li>
 			<li>
-					<a class="black-text">Tedenski</a>
+					<a class="btn black-text white disabled">Tedenski</a>
 			</li>
 			<li>
-					<a class="black-text">Mesečni</a>
+					<a class="btn black-text white disabled">Mesečni</a>
 			</li>
 			<li>
 				<a class="black-text">Letni</a>
 			</li>
+			<li>
+					<a class="black-text" id="delete">Izbriši podatke</a>
+				</li>
 	</ul>
 
 	<div class="container">
@@ -145,21 +137,17 @@
 						</div>
 				</div>
 
-				<table class="highlight centered">
+				<table class="highlight responsive-table" id="tabela">
 					<thead>
 						<tr>
-							<th>Trgovina</th>
-							<th>Znesek izdatka</th>
-							<th>Račun</th>
+							<th><p class="th_tab">Izdajatelj računa</p></th>
+							<th><p class="th_tab">Znesek izdatka (€)</p></th>
+							<th><p class="th_tab">Datum</p></th>
 						</tr>
 					</thead>
 					<tbody>
 						<tr>
-							<td>Mercator</td>
-							<td>12.78€</td>
-							<td>
-								<button class="waves-effect waves-light btn-large green">PDF</button>
-							</td>
+
 						</tr>
 					</tbody>
 			</table>

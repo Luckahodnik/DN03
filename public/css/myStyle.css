@@ -5,7 +5,7 @@ body{
 	font-family: "Montserrat", sans-serif;
 	color:black;
 	height:100%;
-	background-color:#F0F0F0;
+	background-color:white;
 }
 
 .logo{
@@ -80,7 +80,7 @@ body{
 }
 
 #menu li>a{
-	font-size:1.2em !important;
+	font-size:1.1em !important;
 }
 
 #vrstica_dropdown{
@@ -101,12 +101,14 @@ body{
 #vsi_izdatki{
 	position: relative;
 	padding-right: 10px;
+
 }
 
 #vsi_izdatki>div{
 	position: relative;
 	border-radius: 10px;
-	border-left: 6px solid #8CD790;
+	border-left: 6px solid rgb(16, 197, 16);
+	height:150px !important;
 	/*margin-right:10px;*/
 }
 
@@ -118,7 +120,8 @@ body{
 #st_racunov>div{
 	position: relative;
 	border-radius: 10px;
-	border-left: 6px solid #1F5673;
+	border-left: 6px solid rgb(16, 197, 16);
+	height:150px !important;
 	/*margin-right:10px;*/
 }
 
@@ -126,10 +129,12 @@ body{
 	position: relative;
 	padding-right: 10px;
 }
+
 #poraba>div{
 	position: relative;
 	border-radius: 10px;
-	border-left: 6px solid rgb(22, 141, 141);
+	border-left: 6px solid rgb(16, 197, 16);
+	height:150px !important;
 }
 
 #celota{
@@ -141,4 +146,30 @@ body{
 	display: block;
 	line-height: 22px;
 	padding: 14px 16px;
+}
+
+.datepicker-modal{
+	min-width: 500px !important;
+	max-width: 900px !important;
+}
+.datepicker-date-display{
+	background-color: green !important;
+}
+
+#modal_ikona{
+	text-align: center;
+}
+
+#tabela{
+	margin-top:50px;
+	background:white;
+	border-radius: 10px;
+}
+
+#podatki{
+	margin-top:50px;
+}
+
+.th_tab{
+	font-size: 1.2em;
 }
