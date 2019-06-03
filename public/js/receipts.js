@@ -49,11 +49,8 @@ $(document).ready(function(){
 						let elam = $( this ).find('.amount_tab');
 						let elda = $( this ).find('.date_tab');
 						retObj["name"] = elnm.text();
-						console.log(elnm.text().trim());
 						retObj["znesek"] = parseFloat(elam.text());
-						console.log(parseFloat(elam.text().trim()));
 						retObj["datum"] = new Date(elda.text());
-						console.log(new Date(elda.text().trim()));
 						if (!isNaN(retObj['datum'].getTime())){
 						arrayPodatkov.push(retObj);
 					}
@@ -90,7 +87,7 @@ function processXML(xmlDoc){
     return retObj;
 }
 
-function deleteFromTable(e){
+/*function deleteFromTable(e){
 				arrayPodatkov = [];
 				maks=0;
     for(let x in dictMesecev){
@@ -98,7 +95,7 @@ function deleteFromTable(e){
     }
 				renderTable();
 				chart.update();
-}
+}*/
 
 function renderTable(){
 				const tabelaEl = document.getElementById('tabela');
@@ -172,7 +169,7 @@ function updateOnKeypress(){
     //submitEl.onclick = updateTable;
     spentEl.addEventListener('keypress', funcOnKeypress);
     whenEl.addEventListener('keypress', funcOnKeypress);
-    document.getElementById("delete").onclick = deleteFromTable;
+    //document.getElementById("delete").onclick = deleteFromTable;
 }
 
 
@@ -242,7 +239,6 @@ function aggregateByMonths(){
         dict[month[m]] = [];
     }
     for(let x in arrayPodatkov){
-					console.log(arrayPodatkov[x].datum);
         dict[month[arrayPodatkov[x].datum.getMonth()]].push(arrayPodatkov[x].znesek);
         sum = dict[month[arrayPodatkov[x].datum.getMonth()]].reduce((previous, current) => current += previous);
         dictMesecev[arrayPodatkov[x].datum.getMonth()] = sum;

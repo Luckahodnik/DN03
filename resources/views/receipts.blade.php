@@ -49,18 +49,15 @@
 								<form class="col s12" action="/xml" method="post">
 										<div class="row">
 												<div class="input-field col s7">
-														<input id="ime_trg" type="text" name="name">
-														<span class="helper-text" data-error="wrong" data-success="right">Helper text</span>
+														<input id="ime_trg" type="text" class="validate" name="name">
 														<label>Ime trgovine</label>
 												</div>
 												<div class="input-field col s7">
-														<input id="znesek" type="text" name="amount">
-														<span class="helper-text" data-error="wrong" data-success="right">Helper text</span>
+														<input id="znesek" type="text" class="validate" name="amount">
 														<label for="last_name">Znesek(€)</label>
 												</div>
 										<div class="input-field col s6">
-												<input id="datum" type="text" class="datepicker" name="timestamp">
-												<span class="helper-text" data-error="wrong" data-success="right">Helper text</span>
+												<input id="datum" type="text" class="datepicker" class="validate" name="timestamp">
 												<label for="last_name">Datum izdatka</label>
 										</div>
 									</div>
@@ -125,9 +122,7 @@
 			<li>
 				<a class="black-text">Letni</a>
 			</li>
-			<li>
-					<a class="black-text" id="delete">Izbriši podatke</a>
-				</li>
+
 	</ul>
 
 	<div class="container">
@@ -143,7 +138,7 @@
 						</div>
 				</div>
 
-				<table class="highlight responsive-table" id="tabela">
+				<table class="highlight" id="tabela">
 					<thead>
 						<tr>
 							<th><p class="th_tab">Izdajatelj računa</p></th>

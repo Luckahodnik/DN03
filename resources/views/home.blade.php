@@ -74,36 +74,6 @@
 			<div>
 
 
-	<div class="green" id="celota">
-		<div class="container">
-		<div class="row">
-		<form class="col s12"  action="{{ route('homeView') }}">
-				{{ csrf_field() }}
-				<div class="row card-panel white z-depth-4 center-align" id="karta">
-					<p><b>Want to help out? Message us!</p>
-						<div class="input-field col s12">
-								<i class="material-icons prefix">person</i>
-								<input type="text" class="form-control" name="name">
-								<label>Ime</label>
-						</div>
-						<div class="input-field col s12">
-								<i class="material-icons prefix">email</i>
-								<input name="email" id="email" type="email" class="validate">
-								<label for="email">Email</label>
-							</div>
-						<div class="input-field col s12">
-								<i class="material-icons prefix">mode_edit</i>
-								<textarea id="icon_prefix2" name="message" class="materialize-textarea"></textarea>
-								<label for="icon_prefix2">Message</label>
-						</div>
-						<button class="btn waves-effect waves-light right" type="submit" name="action">Pošlji
-								<i class="material-icons right">send</i>
-						</button>
-				</div>
-		</form>
-	</div>
-	</div>
-</div>
 
 <div class="container" id="karte">
 		<div class="row">
