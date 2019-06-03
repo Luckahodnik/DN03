@@ -12,6 +12,12 @@
 		<script type="text/javascript" src="{{ asset('js/jquery-3.4.1.min.js') }}"></script>
 		<script type="text/javascript" src="{{ asset('js/materialize.min.js') }}"></script>
 		<script type="text/javascript" src="{{ asset('js/home.js') }}"></script>
+		<style>
+			.invalid-feedback{
+				display:block;
+			}
+
+		</style>
 	</head>
 	<body>
 		@component('components.navbar')
@@ -71,18 +77,23 @@
 	<div class="green" id="celota">
 		<div class="container">
 		<div class="row">
-		<form class="col s12">
+		<form class="col s12"  action="{{ route('homeView') }}">
+				{{ csrf_field() }}
 				<div class="row card-panel white z-depth-4 center-align" id="karta">
 					<p><b>Want to help out? Message us!</p>
 						<div class="input-field col s12">
-								<i class="material-icons prefix">email</i>
-								<input id="email" type="email" class="validate">
-								<label for="email">Email</label>
-								<span class="helper-text" data-error="wrong" data-success="right"></span>
+								<i class="material-icons prefix">person</i>
+								<input type="text" class="form-control" name="name">
+								<label>Ime</label>
 						</div>
 						<div class="input-field col s12">
+								<i class="material-icons prefix">email</i>
+								<input name="email" id="email" type="email" class="validate">
+								<label for="email">Email</label>
+							</div>
+						<div class="input-field col s12">
 								<i class="material-icons prefix">mode_edit</i>
-								<textarea id="icon_prefix2" class="materialize-textarea"></textarea>
+								<textarea id="icon_prefix2" name="message" class="materialize-textarea"></textarea>
 								<label for="icon_prefix2">Message</label>
 						</div>
 						<button class="btn waves-effect waves-light right" type="submit" name="action">Pošlji

@@ -45,7 +45,7 @@
                             <div class="col s4 ">
 																														@if (Route::has('password.request'))
 																																			<a href="{{ route('password.request') }}">
-																																							{{ __('Pozdabljeno geslo?') }}
+																																							{{ __('Pozabljeno geslo?') }}
 																																			</a>
 																															@endif
 																															<button type="submit" class="btn btn-primary green">

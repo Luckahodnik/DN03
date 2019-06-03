@@ -1,10 +1,10 @@
 let vsota = 0;
 let arrayPodatkov = [];
-console.log(arrayPodatkov);
 var chart = null;
 $(document).ready(function(){
 	fileSelector();
 	updateOnKeypress();
+
 
 	$('.modal').modal();
 	$('.modal-trigger').modal({
@@ -40,7 +40,26 @@ $(document).ready(function(){
             }]
         }
     }
-  });
+		});
+		let tab = $('#tabela');
+		let ottab = tab.find('tr');
+		ottab.each(function( index ) {
+						let retObj = {};
+						let elnm = $( this ).find('.name_tab');
+						let elam = $( this ).find('.amount_tab');
+						let elda = $( this ).find('.date_tab');
+						retObj["name"] = elnm.text();
+						console.log(elnm.text().trim());
+						retObj["znesek"] = parseFloat(elam.text());
+						console.log(parseFloat(elam.text().trim()));
+						retObj["datum"] = new Date(elda.text());
+						console.log(new Date(elda.text().trim()));
+						if (!isNaN(retObj['datum'].getTime())){
+						arrayPodatkov.push(retObj);
+					}
+	});
+	aggregateByMonths();
+	renderTable();
 })
 
 
@@ -68,17 +87,17 @@ function processXML(xmlDoc){
 														retObj["datum"] = new Date(dr[0].textContent);
 										}
 				}
-
     return retObj;
 }
 
 function deleteFromTable(e){
-    arrayPodatkov = [];
+				arrayPodatkov = [];
+				maks=0;
     for(let x in dictMesecev){
         dictMesecev[x]= 0;
     }
 				renderTable();
-				chart.update();chart.update();
+				chart.update();
 }
 
 function renderTable(){
@@ -108,7 +127,7 @@ function renderTable(){
 
 function updateIzdatke(){
 	const maksEl = document.getElementById("maks_sum");
-				maksEl.innerHTML = maks.toFixed(2) + "€";
+	maksEl.innerHTML = maks.toFixed(2) + "€";
 	const vpisiEl = document.getElementById("sum_znesek");
 	vpisiEl.innerHTML = vsota.toFixed(2) + "€";
 	const stEl = document.getElementById("st_rac");
@@ -140,7 +159,7 @@ function updateOnKeypress(){
 				const vpisiEl = document.getElementById("ime_trg");
 				const spentEl = document.getElementById('znesek');
     const whenEl  = document.getElementById('datum');
-    const submitEl = document.getElementById('dodaj');
+    //const submitEl = document.getElementById('dodaj');
 
     let funcOnKeypress = function(e) {
         e.stopPropagation();
@@ -150,7 +169,7 @@ function updateOnKeypress(){
         }
     }
 
-    submitEl.onclick = updateTable;
+    //submitEl.onclick = updateTable;
     spentEl.addEventListener('keypress', funcOnKeypress);
     whenEl.addEventListener('keypress', funcOnKeypress);
     document.getElementById("delete").onclick = deleteFromTable;
@@ -181,6 +200,12 @@ function fileSelector(){
 													reader.addEventListener('load', function(e) {
 																	let xmlDoc = parser.parseFromString(e.target.result, "text/xml");
 																	let returnedObject = processXML(xmlDoc);
+																	$.post( "xml",
+																					{'name' : returnedObject['name'],
+																						'timestamp' : returnedObject['datum'].toISOString().slice(0, 10),
+																						'amount' : returnedObject['znesek'],
+																						'raw_xml_data' : e.target.result }
+																	);
 																	arrayPodatkov.push(returnedObject);
 
 																	aggregateByMonths();
@@ -217,6 +242,7 @@ function aggregateByMonths(){
         dict[month[m]] = [];
     }
     for(let x in arrayPodatkov){
+					console.log(arrayPodatkov[x].datum);
         dict[month[arrayPodatkov[x].datum.getMonth()]].push(arrayPodatkov[x].znesek);
         sum = dict[month[arrayPodatkov[x].datum.getMonth()]].reduce((previous, current) => current += previous);
         dictMesecev[arrayPodatkov[x].datum.getMonth()] = sum;
@@ -224,10 +250,8 @@ function aggregateByMonths(){
 				for(x in dictMesecev){
 					if(dictMesecev[x] >= maks){
 									maks = dictMesecev[x];
-
 					}
 				}
-				console.log( dictMesecev);
 				chart.update();
 				updateIzdatke();
 			}

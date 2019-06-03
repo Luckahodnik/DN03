@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\View;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Auth;
+use App\XMLIzlusceniPodatki;
 
 class ReceiptsController extends Controller
 {
@@ -23,6 +27,26 @@ class ReceiptsController extends Controller
      */
     public function index()
     {
-        return view('receipts');
+								$xmlData  = XMLIzlusceniPodatki::where('user_id', Auth::id())->get();
+        return View::make('receipts')->with('xmls', $xmlData);
+				}
+
+				/**
+     * Create a new XML data instance.
+     *
+     * @param  array  $data
+     * @return \App\XMLIzlusceniPodatki
+     */
+    protected function create(array $data)
+    {
+					   Log::alert($data);
+        XMLIzlusceniPodatki::create([
+												'name' => $data['name'],
+												'timestamp' => $data['timestamp'],
+												'amount' => $data['amount'],
+												'raw_xml_data' => $data['xml']
+								]);
+
+								return index();
     }
 }

@@ -35,5 +35,12 @@ class User extends Authenticatable
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
-    ];
+				];
+
+				/**
+     * Get the user that owns this data.
+     */
+    public function xmlPodatki() {
+					   return $this->hasMany('App\XMLIzlusceniPodatki');
+				}
 }

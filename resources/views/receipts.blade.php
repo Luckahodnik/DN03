@@ -19,6 +19,8 @@
 		@component('components.navbar')
 		@endcomponent
 
+
+
   <div class="fixed-action-btn click-to-toggle">
     <a class="btn-floating btn-large red">
       <i class="large material-icons">mode_edit</i>
@@ -44,28 +46,32 @@
 				</div>
     <div class="modal-content">
       <div class="row">
-								<form class="col s12">
+								<form class="col s12" action="/xml" method="post">
 										<div class="row">
 												<div class="input-field col s7">
-														<input id="ime_trg" type="text">
+														<input id="ime_trg" type="text" name="name">
+														<span class="helper-text" data-error="wrong" data-success="right">Helper text</span>
 														<label>Ime trgovine</label>
 												</div>
 												<div class="input-field col s7">
-														<input id="znesek" type="text">
+														<input id="znesek" type="text" name="amount">
+														<span class="helper-text" data-error="wrong" data-success="right">Helper text</span>
 														<label for="last_name">Znesek(€)</label>
 												</div>
 										<div class="input-field col s6">
-												<input id="datum" type="text" class="datepicker">
+												<input id="datum" type="text" class="datepicker" name="timestamp">
+												<span class="helper-text" data-error="wrong" data-success="right">Helper text</span>
 												<label for="last_name">Datum izdatka</label>
 										</div>
+									</div>
+									<hr class="grey">
+									<div class="modal-footer">
+										<input type="submit" value="Submit">
 									</div>
 								</form>
 						</div>
 				</div>
-				<hr class="grey">
-    <div class="modal-footer">
-      <a href="#!" class="modal-close waves-effect waves-green btn-flat" id="dodaj">Dodaj</a>
-    </div>
+
 		</div>
 
 
@@ -146,9 +152,19 @@
 						</tr>
 					</thead>
 					<tbody>
+							@foreach ($xmls as $xml)
 						<tr>
-
+											<td class="name_tab">
+												{{ $xml['name'] }}
+											</td>
+											<td class="amount_tab">
+											{{ $xml['amount'] }}
+											</td>
+											<td class="date_tab">
+													{{ date('Y-m-d', strtotime($xml['timestamp'])) }}
+											</td>
 						</tr>
+						@endforeach
 					</tbody>
 			</table>
 	</div>
